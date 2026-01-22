@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(awk:*)",
+      "Bash(sed:*)",
+      "Bash(bun install:*)",
+      "Bash(bun run check:*)",
+      "Bash(bun run lint)",
+      "Bash(bun run format:*)",
+      "Bash(bun run build:*)",
+      "Bash(bun add:*)"
+    ],
+    "deny": [
+      "Bash(ansible-playbook:*)",
+      "Bash(ansible-vault:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(ssh:*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./.j2.*)"
+    ],
+    "ask": [
+      "Bash(rm:*)"
+    ],
+    "env": {
+      "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+    }
+  }
+}

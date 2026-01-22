@@ -23,7 +23,15 @@ export default defineConfig(
 		rules: {
 			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
 			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-			'no-undef': 'off'
+			'no-undef': 'off',
+			// Allow internal href links without resolve() in SvelteKit
+			'svelte/no-navigation-without-resolve': 'off',
+			// Allow each blocks without keys for static data
+			'svelte/require-each-key': 'off',
+			// Allow {@html} for JSON-LD structured data
+			'svelte/no-at-html-tags': 'off',
+			// Allow any type for Leaflet map instance
+			'@typescript-eslint/no-explicit-any': 'warn'
 		}
 	},
 	{

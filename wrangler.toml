@@ -1,0 +1,20 @@
+name = "studio210"
+compatibility_date = "2026-01-22"
+pages_build_output_dir = ".svelte-kit/cloudflare"
+
+# Routes configuration
+# Cloudflare Pages will automatically handle routing for SvelteKit
+
+# Custom domain configuration
+# Note: You need to add this domain in your Cloudflare Pages dashboard
+# under Settings > Domains & DNS
+# Domain: studio210hair.co.uk
+
+# Build configuration
+[build]
+command = "bun run build"
+
+# Environment variables (if needed)
+# [env.production]
+# [env.production.vars]
+# API_URL = "https://api.studio210hair.co.uk"
