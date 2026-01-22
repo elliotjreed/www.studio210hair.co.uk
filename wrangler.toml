@@ -18,9 +18,9 @@ command = "bun run build"
 # [env.production.vars]
 # VITE_EMAILJS_PUBLIC_KEY = ""
 # VITE_EMAILJS_SERVICE_ID = ""
-# VITE_EMAILJS_TEMPLATE_ID = "your_template_id_here"service_bu8vg88
+# VITE_EMAILJS_TEMPLATE_ID = ""
 
 # Custom domain configuration
 # Add custom domains in Cloudflare Pages dashboard:
 # Settings > Custom domains > Add domain
-Domain: studio210hair.co.uk
+# Domain: www.studio210hair.co.uk
