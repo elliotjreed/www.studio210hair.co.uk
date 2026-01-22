@@ -224,6 +224,22 @@ Cloudflare Pages provides:
 
 ### Troubleshooting Deployment Issues
 
+#### Error: "root directory not found"
+
+If you see this error during the cloning step:
+```
+Cloning repository...
+Failed: root directory not found
+```
+
+**Solution**: Your Cloudflare Pages project is connected to the wrong repository or the repository path has changed.
+
+1. Verify the correct repository URL in GitHub
+2. Delete and recreate the Cloudflare Pages project
+3. When recreating, ensure you select the correct repository
+4. Verify the **Root directory** setting is `/` (default)
+5. Ensure the **Production branch** matches your actual branch name (usually `main`)
+
 #### Error: "It looks like you've run a Workers-specific command in a Pages project"
 
 If you see this error during deployment:
