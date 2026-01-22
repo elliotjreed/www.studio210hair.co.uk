@@ -131,9 +131,11 @@ This project is configured to deploy to Cloudflare Pages. You have two deploymen
    - Select your GitHub repository
    - Configure the build settings:
      - **Production branch**: `main`
-     - **Build command**: `bun run build` (or `npm run build`)
+     - **Build command**: `npm run build` (or `bun run build` if Bun is available)
      - **Build output directory**: `.svelte-kit/cloudflare`
+     - **Deployment command**: Leave empty (or set to `echo "Deployed"` if required)
      - **Framework preset**: Select "SvelteKit" (it will auto-detect)
+     - **Important**: Cloudflare Pages automatically deploys the build output - no wrangler commands needed
 
 3. **Add Environment Variables**
    - Go to your Pages project settings
@@ -219,3 +221,32 @@ Cloudflare Pages provides:
 - **Global CDN** with edge caching
 - **Unlimited bandwidth** on the free plan
 - **500 builds per month** on the free plan
+
+### Troubleshooting Deployment Issues
+
+#### Error: "It looks like you've run a Workers-specific command in a Pages project"
+
+If you see this error during deployment:
+```
+✘ [ERROR] It looks like you've run a Workers-specific command in a Pages project.
+  For Pages, please run `wrangler pages deploy` instead.
+```
+
+**Solution**: Your build configuration in the Cloudflare Pages dashboard is incorrect.
+
+1. Go to **Settings** > **Builds & deployments**
+2. Click **Edit** on your build configuration
+3. Ensure the **Build command** is ONLY `npm run build` (or `bun run build`)
+4. Remove any references to `wrangler deploy` or `wrangler pages deploy` from the build command
+5. Cloudflare Pages automatically deploys after building - you don't need to add deployment commands
+6. Save and retry the deployment
+
+**Correct configuration**:
+- Build command: `npm run build`
+- Build output directory: `.svelte-kit/cloudflare`
+- Deployment command: (leave empty or set to `echo "Deployed"`)
+
+**Incorrect configuration** (will cause error):
+- Build command: `npm run build && wrangler deploy` ❌
+- Deployment command: `npx wrangler deploy` ❌
+- Deployment command: `wrangler pages deploy` ❌

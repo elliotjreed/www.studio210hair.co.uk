@@ -23,4 +23,4 @@ command = "bun run build"
 # Custom domain configuration
 # Add custom domains in Cloudflare Pages dashboard:
 # Settings > Custom domains > Add domain
-# Domain: studio210hair.co.uk
+Domain: studio210hair.co.uk
