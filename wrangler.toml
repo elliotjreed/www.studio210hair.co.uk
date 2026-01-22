@@ -1,20 +1,26 @@
+# Cloudflare Pages Configuration
+# This file is used for local development and deployment with wrangler
+
 name = "studio210"
 compatibility_date = "2026-01-22"
+
+# Pages-specific configuration
 pages_build_output_dir = ".svelte-kit/cloudflare"
 
-# Routes configuration
-# Cloudflare Pages will automatically handle routing for SvelteKit
-
-# Custom domain configuration
-# Note: You need to add this domain in your Cloudflare Pages dashboard
-# under Settings > Domains & DNS
-# Domain: studio210hair.co.uk
-
-# Build configuration
+# Build configuration (used when deploying via CLI)
+# For automatic deployments via GitHub, configure these in the Pages dashboard
 [build]
 command = "bun run build"
 
-# Environment variables (if needed)
-# [env.production]
+# Environment variables
+# Add these in your Cloudflare Pages dashboard under Settings > Environment variables
+# For local development, use .env file
 # [env.production.vars]
-# API_URL = "https://api.studio210hair.co.uk"
+# VITE_EMAILJS_PUBLIC_KEY = ""
+# VITE_EMAILJS_SERVICE_ID = ""
+# VITE_EMAILJS_TEMPLATE_ID = "your_template_id_here"service_bu8vg88
+
+# Custom domain configuration
+# Add custom domains in Cloudflare Pages dashboard:
+# Settings > Custom domains > Add domain
+# Domain: studio210hair.co.uk

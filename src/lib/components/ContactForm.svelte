@@ -1,24 +1,90 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { onMount } from 'svelte';
+	import emailjs from '@emailjs/browser';
 	import type { ActionData } from '../../routes/contact/$types';
+	import { emailjsConfig, isEmailJSConfigured } from '$lib/config/emailjs';
 
 	interface Props {
 		form: ActionData | null;
 	}
 
 	let { form }: Props = $props();
+	let isSubmitting = $state(false);
+	let submitStatus = $state<{ type: 'success' | 'error'; message: string } | null>(null);
+	let formElement: HTMLFormElement;
+	let emailJSReady = $state(false);
+
+	onMount(() => {
+		// Initialize EmailJS if configured
+		if (isEmailJSConfigured()) {
+			emailjs.init(emailjsConfig.publicKey);
+			emailJSReady = true;
+		}
+	});
+
+	async function handleSubmit(event: Event) {
+		event.preventDefault();
+
+		if (!emailJSReady) {
+			// Fallback to server-side form submission
+			formElement.submit();
+			return;
+		}
+
+		isSubmitting = true;
+		submitStatus = null;
+
+		const formData = new FormData(formElement);
+		const templateParams = {
+			from_name: formData.get('name'),
+			from_email: formData.get('email'),
+			phone: formData.get('phone') || 'Not provided',
+			message: formData.get('message')
+		};
+
+		try {
+			await emailjs.send(
+				emailjsConfig.serviceId,
+				emailjsConfig.templateId,
+				templateParams
+			);
+
+			submitStatus = {
+				type: 'success',
+				message: "Thank you for your message! We'll be in touch soon."
+			};
+
+			// Reset form
+			formElement.reset();
+		} catch (error) {
+			console.error('EmailJS error:', error);
+			submitStatus = {
+				type: 'error',
+				message: 'Sorry, there was an error sending your message. Please try again or call us directly.'
+			};
+		} finally {
+			isSubmitting = false;
+		}
+	}
 </script>
 
-<form method="POST" use:enhance class="space-y-6">
-	{#if form?.success}
+<form
+	bind:this={formElement}
+	method="POST"
+	use:enhance
+	class="space-y-6"
+	onsubmit={handleSubmit}
+>
+	{#if submitStatus?.type === 'success' || form?.success}
 		<div class="rounded border border-green-200 bg-green-50 px-4 py-3 text-green-800" role="status">
-			Thank you for your message! We'll be in touch soon.
+			{submitStatus?.message || "Thank you for your message! We'll be in touch soon."}
 		</div>
 	{/if}
 
-	{#if form?.error}
+	{#if submitStatus?.type === 'error' || form?.error}
 		<div class="rounded border border-red-200 bg-red-50 px-4 py-3 text-red-800" role="alert">
-			{form.error}
+			{submitStatus?.message || form?.error}
 		</div>
 	{/if}
 
@@ -80,8 +146,9 @@
 
 	<button
 		type="submit"
-		class="w-full rounded-lg bg-[var(--color-gold)] px-6 py-3 font-semibold text-[var(--color-navy)] transition-colors hover:bg-[var(--color-gold-dark)]"
+		disabled={isSubmitting}
+		class="w-full rounded-lg bg-[var(--color-gold)] px-6 py-3 font-semibold text-[var(--color-navy)] transition-colors hover:bg-[var(--color-gold-dark)] disabled:cursor-not-allowed disabled:opacity-50"
 	>
-		Send Message
+		{isSubmitting ? 'Sending...' : 'Send Message'}
 	</button>
 </form>

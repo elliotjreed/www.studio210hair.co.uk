@@ -8,12 +8,9 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter({
-			routes: {
-				include: ['/*'],
-				exclude: ['<all>']
-			}
-		})
+		// Cloudflare Pages adapter configuration
+		// No routes configuration needed - Pages handles all routes automatically
+		adapter: adapter()
 	}
 };
 
