@@ -1,7 +1,7 @@
 # Cloudflare Pages Configuration
 # This file is used for local development and deployment with wrangler
 
-name = "studio210"
+name = "studio210hair"
 compatibility_date = "2026-01-22"
 
 # Pages-specific configuration
