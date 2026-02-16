@@ -11,9 +11,10 @@
 			<!-- Logo -->
 			<a
 				href="/"
-				class="font-serif text-2xl font-bold text-[var(--color-gold)] transition-opacity hover:opacity-90 md:text-3xl"
+				class="flex items-center gap-3 font-serif text-2xl font-bold text-[var(--color-gold)] transition-opacity hover:opacity-90 md:text-3xl"
 			>
-				Studio210
+				<img src="/favicon.svg" alt="Studio210 Logo" class="h-10 w-10 md:h-12 md:w-12" />
+				<span>Studio210</span>
 			</a>
 
 			<!-- Desktop Navigation -->

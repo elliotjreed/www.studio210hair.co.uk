@@ -2,6 +2,7 @@ import { page } from 'vitest/browser';
 import { describe, expect, it, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import Page from './+page.svelte';
+import { generateLocalBusinessSchema } from '$lib/utils/seo';
 
 // Mock $app/stores
 vi.mock('$app/stores', () => ({
@@ -20,7 +21,8 @@ describe('/+page.svelte', () => {
 				data: {
 					seo: {
 						title: 'Test Title',
-						description: 'Test Description'
+						description: 'Test Description',
+						jsonLd: generateLocalBusinessSchema()
 					},
 					featuredServices: [],
 					reviews: [],
