@@ -1,3 +1,5 @@
+@import '@fontsource-variable/playfair-display';
+@import '@fontsource-variable/inter';
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
@@ -18,8 +20,8 @@
 	--color-neutral-900: #111827;
 
 	/* Typography */
-	--font-sans: ui-sans-serif, system-ui, sans-serif;
-	--font-serif: ui-serif, Georgia, serif;
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Playfair Display Variable', ui-serif, Georgia, serif;
 
 	/* Spacing for consistent design */
 	--spacing-section: 4rem;

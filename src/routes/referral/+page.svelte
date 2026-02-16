@@ -16,7 +16,7 @@
 	<div class="absolute inset-0 bg-black/50"></div>
 
 	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 text-4xl font-bold text-white md:text-5xl">Referral Programme</h1>
+		<h1 class="mb-6 font-serif text-4xl font-bold text-white md:text-5xl">Referral Programme</h1>
 		<p class="mx-auto max-w-3xl text-xl text-white">
 			Share the love and save together! Refer a friend and you both get £5 off.
 		</p>
@@ -27,7 +27,9 @@
 <section class="bg-white py-16">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-4xl">
-			<h2 class="mb-12 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+			<h2
+				class="mb-12 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+			>
 				How It Works
 			</h2>
 
@@ -39,7 +41,7 @@
 					>
 						<span class="text-2xl font-bold text-[var(--color-navy)]">1</span>
 					</div>
-					<h3 class="mb-3 text-xl font-bold text-[var(--color-navy)]">Refer a Friend</h3>
+					<h3 class="mb-3 font-serif text-xl font-bold text-[var(--color-navy)]">Refer a Friend</h3>
 					<p class="text-gray-700">
 						Tell your friends and family about Studio210. Share your experience and recommend our
 						services.
@@ -53,7 +55,9 @@
 					>
 						<span class="text-2xl font-bold text-[var(--color-navy)]">2</span>
 					</div>
-					<h3 class="mb-3 text-xl font-bold text-[var(--color-navy)]">They Book & Mention You</h3>
+					<h3 class="mb-3 font-serif text-xl font-bold text-[var(--color-navy)]">
+						They Book & Mention You
+					</h3>
 					<p class="text-gray-700">
 						When your friend books their first appointment, they mention your name to receive their
 						discount.
@@ -67,7 +71,9 @@
 					>
 						<span class="text-2xl font-bold text-[var(--color-navy)]">3</span>
 					</div>
-					<h3 class="mb-3 text-xl font-bold text-[var(--color-navy)]">You Both Save £5</h3>
+					<h3 class="mb-3 font-serif text-xl font-bold text-[var(--color-navy)]">
+						You Both Save £5
+					</h3>
 					<p class="text-gray-700">
 						Your friend gets £5 off their first appointment, and you get £5 off your next visit!
 					</p>
@@ -99,7 +105,9 @@
 								d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
 							/>
 						</svg>
-						<h3 class="text-2xl font-bold text-[var(--color-navy)]">For Existing Customers</h3>
+						<h3 class="font-serif text-2xl font-bold text-[var(--color-navy)]">
+							For Existing Customers
+						</h3>
 					</div>
 					<div class="mb-6 rounded-lg bg-[var(--color-gold)] p-6 text-center">
 						<p class="text-3xl font-bold text-[var(--color-navy)]">£5 OFF</p>
@@ -173,7 +181,9 @@
 								d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
 							/>
 						</svg>
-						<h3 class="text-2xl font-bold text-[var(--color-navy)]">For New Customers</h3>
+						<h3 class="font-serif text-2xl font-bold text-[var(--color-navy)]">
+							For New Customers
+						</h3>
 					</div>
 					<div class="mb-6 rounded-lg bg-[var(--color-gold)] p-6 text-center">
 						<p class="text-3xl font-bold text-[var(--color-navy)]">£5 OFF</p>
@@ -236,7 +246,9 @@
 <section class="bg-white py-16">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-3xl">
-			<h2 class="mb-8 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+			<h2
+				class="mb-8 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+			>
 				How to Redeem Your Discount
 			</h2>
 
@@ -264,7 +276,9 @@
 							</div>
 						</div>
 						<div>
-							<h3 class="mb-2 text-xl font-bold text-[var(--color-navy)]">Book by Phone</h3>
+							<h3 class="mb-2 font-serif text-xl font-bold text-[var(--color-navy)]">
+								Book by Phone
+							</h3>
 							<p class="text-gray-700">
 								Call us at <a
 									href="tel:07395292575"
@@ -296,7 +310,9 @@
 							</div>
 						</div>
 						<div>
-							<h3 class="mb-2 text-xl font-bold text-[var(--color-navy)]">Book Online</h3>
+							<h3 class="mb-2 font-serif text-xl font-bold text-[var(--color-navy)]">
+								Book Online
+							</h3>
 							<p class="text-gray-700">
 								Use our <a
 									href="/booking"
@@ -329,7 +345,9 @@
 							</div>
 						</div>
 						<div>
-							<h3 class="mb-2 text-xl font-bold text-[var(--color-navy)]">Visit in Person</h3>
+							<h3 class="mb-2 font-serif text-xl font-bold text-[var(--color-navy)]">
+								Visit in Person
+							</h3>
 							<p class="text-gray-700">
 								Stop by our salon at 210 Bestwood Park Drive and let us know who referred you when
 								you book.
@@ -346,7 +364,9 @@
 <section class="bg-[var(--color-neutral-50)] py-16">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-3xl">
-			<h2 class="mb-8 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+			<h2
+				class="mb-8 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+			>
 				Terms & Conditions
 			</h2>
 
@@ -490,7 +510,7 @@
 	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-16 text-white"
 >
 	<div class="container mx-auto px-4 text-center">
-		<h2 class="mb-6 text-3xl font-bold md:text-4xl">Start Referring Today!</h2>
+		<h2 class="mb-6 font-serif text-3xl font-bold md:text-4xl">Start Referring Today!</h2>
 		<p class="mx-auto mb-8 max-w-2xl text-xl">
 			Share the Studio210 experience with your friends and family, and enjoy £5 off together.
 		</p>

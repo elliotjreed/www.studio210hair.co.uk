@@ -11,7 +11,7 @@
 			<!-- Logo -->
 			<a
 				href="/"
-				class="text-2xl font-bold text-[var(--color-gold)] transition-opacity hover:opacity-90 md:text-3xl"
+				class="font-serif text-2xl font-bold text-[var(--color-gold)] transition-opacity hover:opacity-90 md:text-3xl"
 			>
 				Studio210
 			</a>

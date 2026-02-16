@@ -6,7 +6,7 @@
 	<div class="absolute inset-0 bg-black/50"></div>
 
 	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
+		<h1 class="mb-6 font-serif text-4xl font-bold md:text-5xl lg:text-6xl">
 			Welcome to <span class="text-[var(--color-gold)]">Studio210</span>
 		</h1>
 

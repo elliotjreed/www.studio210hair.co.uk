@@ -19,9 +19,5 @@ export const emailjsConfig = {
  * Check if EmailJS is properly configured
  */
 export function isEmailJSConfigured(): boolean {
-	return !!(
-		emailjsConfig.publicKey &&
-		emailjsConfig.serviceId &&
-		emailjsConfig.templateId
-	);
+	return !!(emailjsConfig.publicKey && emailjsConfig.serviceId && emailjsConfig.templateId);
 }

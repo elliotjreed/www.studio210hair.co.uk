@@ -19,7 +19,7 @@
 	<div class="absolute inset-0 bg-white/60"></div>
 
 	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 text-4xl font-bold text-[var(--color-navy)] md:text-5xl">
+		<h1 class="mb-6 font-serif text-4xl font-bold text-[var(--color-navy)] md:text-5xl">
 			Book Your Appointment
 		</h1>
 		<p class="mx-auto max-w-3xl text-xl text-[var(--color-navy)]">
@@ -34,19 +34,23 @@
 		<div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
 			<!-- Booking Form -->
 			<div class="lg:col-span-2">
-				<h2 class="mb-6 text-3xl font-bold text-[var(--color-navy)]">Appointment Details</h2>
+				<h2 class="mb-6 font-serif text-3xl font-bold text-[var(--color-navy)]">
+					Appointment Details
+				</h2>
 				<BookingForm {form} services={data.services} />
 			</div>
 
 			<!-- Booking Information -->
 			<div class="space-y-8">
 				<div class="rounded-lg bg-[var(--color-neutral-50)] p-6">
-					<h3 class="mb-4 text-2xl font-bold text-[var(--color-navy)]">Opening Hours</h3>
+					<h3 class="mb-4 font-serif text-2xl font-bold text-[var(--color-navy)]">Opening Hours</h3>
 					<OpeningHours />
 				</div>
 
 				<div class="rounded-lg bg-[var(--color-neutral-50)] p-6">
-					<h3 class="mb-4 text-2xl font-bold text-[var(--color-navy)]">What to Expect</h3>
+					<h3 class="mb-4 font-serif text-2xl font-bold text-[var(--color-navy)]">
+						What to Expect
+					</h3>
 					<ul class="space-y-3 text-gray-700" role="list">
 						<li class="flex items-start gap-2">
 							<svg
@@ -97,7 +101,7 @@
 				</div>
 
 				<div class="rounded-lg bg-[var(--color-navy)] p-6 text-white">
-					<h3 class="mb-2 text-xl font-bold">Need Help?</h3>
+					<h3 class="mb-2 font-serif text-xl font-bold">Need Help?</h3>
 					<p class="mb-4">Prefer to book by phone?</p>
 					<a
 						href="tel:07395292575"

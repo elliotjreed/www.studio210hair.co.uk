@@ -86,11 +86,13 @@ Message:
 ### 5. Configure Environment Variables
 
 1. Copy `.env.example` to `.env`:
+
    ```sh
    cp .env.example .env
    ```
 
 2. Edit `.env` and add your EmailJS credentials:
+
    ```
    VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
    VITE_EMAILJS_SERVICE_ID=your_service_id_here
@@ -102,6 +104,7 @@ Message:
 ### Testing
 
 Once configured, test the contact form by:
+
 1. Navigate to the `/contact` page
 2. Fill out and submit the form
 3. Check your configured email inbox for the message
@@ -120,6 +123,7 @@ This project is configured to deploy to Cloudflare Pages. You have two deploymen
 ### Option 1: Automatic Deployments via GitHub (Recommended)
 
 1. **Push your code to GitHub**
+
    ```sh
    git push origin main
    ```
@@ -153,6 +157,7 @@ This project is configured to deploy to Cloudflare Pages. You have two deploymen
 ### Option 2: Manual Deployment via CLI
 
 1. **Install Wrangler** (if not already installed)
+
    ```sh
    npm install -g wrangler
    # or
@@ -160,11 +165,13 @@ This project is configured to deploy to Cloudflare Pages. You have two deploymen
    ```
 
 2. **Login to Cloudflare**
+
    ```sh
    wrangler login
    ```
 
 3. **Build and Deploy**
+
    ```sh
    # Deploy to preview
    bun run deploy
@@ -208,12 +215,14 @@ This uses the actual Cloudflare Workers runtime, which is more accurate than the
 ### Environment Variables
 
 Remember to set all environment variables in the Cloudflare Pages dashboard under **Settings** > **Environment variables**. You can set different values for:
+
 - **Production**: Used for production deployments
 - **Preview**: Used for preview deployments (PRs, non-production branches)
 
 ### Deployment Features
 
 Cloudflare Pages provides:
+
 - **Automatic deployments** from Git branches
 - **Preview deployments** for every pull request
 - **Instant rollbacks** to previous deployments
@@ -227,6 +236,7 @@ Cloudflare Pages provides:
 #### Error: "root directory not found"
 
 If you see this error during the cloning step:
+
 ```
 Cloning repository...
 Failed: root directory not found
@@ -243,6 +253,7 @@ Failed: root directory not found
 #### Error: "It looks like you've run a Workers-specific command in a Pages project"
 
 If you see this error during deployment:
+
 ```
 ✘ [ERROR] It looks like you've run a Workers-specific command in a Pages project.
   For Pages, please run `wrangler pages deploy` instead.
@@ -258,11 +269,13 @@ If you see this error during deployment:
 6. Save and retry the deployment
 
 **Correct configuration**:
+
 - Build command: `npm run build`
 - Build output directory: `.svelte-kit/cloudflare`
 - Deployment command: (leave empty or set to `echo "Deployed"`)
 
 **Incorrect configuration** (will cause error):
+
 - Build command: `npm run build && wrangler deploy` ❌
 - Deployment command: `npx wrangler deploy` ❌
 - Deployment command: `wrangler pages deploy` ❌

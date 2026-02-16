@@ -44,11 +44,7 @@
 		};
 
 		try {
-			await emailjs.send(
-				emailjsConfig.serviceId,
-				emailjsConfig.templateId,
-				templateParams
-			);
+			await emailjs.send(emailjsConfig.serviceId, emailjsConfig.templateId, templateParams);
 
 			submitStatus = {
 				type: 'success',
@@ -61,7 +57,8 @@
 			console.error('EmailJS error:', error);
 			submitStatus = {
 				type: 'error',
-				message: 'Sorry, there was an error sending your message. Please try again or call us directly.'
+				message:
+					'Sorry, there was an error sending your message. Please try again or call us directly.'
 			};
 		} finally {
 			isSubmitting = false;
@@ -69,13 +66,7 @@
 	}
 </script>
 
-<form
-	bind:this={formElement}
-	method="POST"
-	use:enhance
-	class="space-y-6"
-	onsubmit={handleSubmit}
->
+<form bind:this={formElement} method="POST" use:enhance class="space-y-6" onsubmit={handleSubmit}>
 	{#if submitStatus?.type === 'success' || form?.success}
 		<div class="rounded border border-green-200 bg-green-50 px-4 py-3 text-green-800" role="status">
 			{submitStatus?.message || "Thank you for your message! We'll be in touch soon."}

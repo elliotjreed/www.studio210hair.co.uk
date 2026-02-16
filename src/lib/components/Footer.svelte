@@ -10,19 +10,19 @@
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<!-- Contact Information -->
 			<div>
-				<h3 class="mb-4 text-xl font-bold text-[var(--color-gold)]">Contact Us</h3>
+				<h3 class="mb-4 font-serif text-xl font-bold text-[var(--color-gold)]">Contact Us</h3>
 				<ContactInfo />
 			</div>
 
 			<!-- Opening Hours -->
 			<div>
-				<h3 class="mb-4 text-xl font-bold text-[var(--color-gold)]">Opening Hours</h3>
+				<h3 class="mb-4 font-serif text-xl font-bold text-[var(--color-gold)]">Opening Hours</h3>
 				<OpeningHours />
 			</div>
 
 			<!-- Social & Quick Links -->
 			<div>
-				<h3 class="mb-4 text-xl font-bold text-[var(--color-gold)]">Follow Us</h3>
+				<h3 class="mb-4 font-serif text-xl font-bold text-[var(--color-gold)]">Follow Us</h3>
 				<SocialLinks />
 
 				<div class="mt-6">

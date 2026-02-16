@@ -17,7 +17,7 @@
 	<div class="absolute inset-0 bg-black/50"></div>
 
 	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 text-4xl font-bold text-white md:text-5xl">Customer Reviews</h1>
+		<h1 class="mb-6 font-serif text-4xl font-bold text-white md:text-5xl">Customer Reviews</h1>
 		<p class="mx-auto max-w-3xl text-xl text-white">
 			Read what our clients say about their experience at Studio210
 		</p>
@@ -53,7 +53,9 @@
 <section class="bg-white py-16">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-6xl">
-			<h2 class="mb-12 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+			<h2
+				class="mb-12 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+			>
 				What Our Clients Say
 			</h2>
 
@@ -111,7 +113,7 @@
 <!-- Client Work Carousel -->
 <section class="bg-[var(--color-neutral-50)] py-12">
 	<div class="container mx-auto px-4">
-		<h2 class="mb-8 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+		<h2 class="mb-8 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
 			See the Results
 		</h2>
 		<div class="mx-auto max-w-5xl">
@@ -125,7 +127,9 @@
 	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-16 text-white"
 >
 	<div class="container mx-auto px-4 text-center">
-		<h2 class="mb-6 text-3xl font-bold md:text-4xl">Experience the Studio210 Difference</h2>
+		<h2 class="mb-6 font-serif text-3xl font-bold md:text-4xl">
+			Experience the Studio210 Difference
+		</h2>
 		<p class="mx-auto mb-8 max-w-2xl text-xl">
 			Join our satisfied clients and book your appointment today for professional hair care in a
 			friendly atmosphere.

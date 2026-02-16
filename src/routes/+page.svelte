@@ -20,7 +20,7 @@
 <section class="bg-white py-16">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-3xl text-center">
-			<h2 class="mb-6 text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+			<h2 class="mb-6 font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
 				Your Local Hair Experts
 			</h2>
 			<p class="mb-4 text-lg text-gray-700">
@@ -39,7 +39,9 @@
 <!-- Featured Services Section -->
 <section class="bg-[var(--color-neutral-50)] py-16">
 	<div class="container mx-auto px-4">
-		<h2 class="mb-12 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+		<h2
+			class="mb-12 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+		>
 			Popular Services
 		</h2>
 		<div class="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -61,7 +63,9 @@
 <!-- Customer Reviews Section -->
 <section class="bg-white py-16">
 	<div class="container mx-auto px-4">
-		<h2 class="mb-12 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+		<h2
+			class="mb-12 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+		>
 			What Our Clients Say
 		</h2>
 		<div class="mx-auto max-w-5xl">
@@ -81,7 +85,7 @@
 <!-- Client Gallery Section -->
 <section class="bg-[var(--color-neutral-50)] py-16">
 	<div class="container mx-auto px-4">
-		<h2 class="mb-4 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+		<h2 class="mb-4 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
 			Our Recent Work
 		</h2>
 		<p class="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-700">
@@ -94,7 +98,9 @@
 <!-- Location Section -->
 <section class="bg-white py-16">
 	<div class="container mx-auto px-4">
-		<h2 class="mb-12 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+		<h2
+			class="mb-12 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+		>
 			Visit Us
 		</h2>
 		<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -102,7 +108,9 @@
 				<Map />
 			</div>
 			<div class="flex flex-col justify-center">
-				<h3 class="mb-6 text-2xl font-bold text-[var(--color-navy)]">Location & Hours</h3>
+				<h3 class="mb-6 font-serif text-2xl font-bold text-[var(--color-navy)]">
+					Location & Hours
+				</h3>
 				<div class="mb-8">
 					<h4 class="mb-3 text-lg font-semibold text-[var(--color-navy)]">Address</h4>
 					<ContactInfo />
@@ -121,7 +129,7 @@
 	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-16 text-white"
 >
 	<div class="container mx-auto px-4 text-center">
-		<h2 class="mb-6 text-3xl font-bold md:text-4xl">Ready for a New Look?</h2>
+		<h2 class="mb-6 font-serif text-3xl font-bold md:text-4xl">Ready for a New Look?</h2>
 		<p class="mx-auto mb-8 max-w-2xl text-xl">
 			Book your appointment today and let our expert stylists bring your vision to life.
 		</p>

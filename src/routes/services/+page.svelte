@@ -18,7 +18,9 @@
 	<div class="absolute inset-0 bg-white/60"></div>
 
 	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 text-4xl font-bold text-[var(--color-navy)] md:text-5xl">Our Services</h1>
+		<h1 class="mb-6 font-serif text-4xl font-bold text-[var(--color-navy)] md:text-5xl">
+			Our Services
+		</h1>
 		<p class="mx-auto max-w-3xl text-xl text-[var(--color-navy)]">
 			From classic cuts to creative color, we offer a comprehensive range of professional hair
 			services tailored to your unique style.
@@ -30,7 +32,7 @@
 {#each data.services as category, index}
 	<section class={`py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-[var(--color-neutral-50)]'}`}>
 		<div class="container mx-auto px-4">
-			<h2 class="mb-8 text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+			<h2 class="mb-8 font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
 				{category.category}
 			</h2>
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -45,7 +47,7 @@
 <!-- Client Work Carousel -->
 <section class="bg-white py-12">
 	<div class="container mx-auto px-4">
-		<h2 class="mb-8 text-center text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
+		<h2 class="mb-8 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
 			See Our Work
 		</h2>
 		<div class="mx-auto max-w-5xl">
@@ -59,7 +61,7 @@
 	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-16 text-white"
 >
 	<div class="container mx-auto px-4 text-center">
-		<h2 class="mb-6 text-3xl font-bold md:text-4xl">Ready to Book?</h2>
+		<h2 class="mb-6 font-serif text-3xl font-bold md:text-4xl">Ready to Book?</h2>
 		<p class="mx-auto mb-8 max-w-2xl text-xl">
 			Choose your perfect service and book your appointment online today.
 		</p>
