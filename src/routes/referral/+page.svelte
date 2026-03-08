@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import SEOHead from '$lib/components/SEOHead.svelte';
+	import { fadeIn } from '$lib/actions/fadeIn';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -9,35 +10,47 @@
 
 <!-- Page Header -->
 <section
-	class="relative bg-cover bg-center py-16"
+	class="relative bg-cover bg-center py-24 md:py-32"
 	style="background-image: url('/photos/hair-styling.jpg');"
 >
-	<!-- Dark overlay for text readability -->
-	<div class="absolute inset-0 bg-black/50"></div>
+	<!-- Gradient overlay -->
+	<div
+		class="absolute inset-0"
+		style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.25) 100%);"
+	></div>
 
-	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 font-serif text-4xl font-bold text-white md:text-5xl">Referral Programme</h1>
-		<p class="mx-auto max-w-3xl text-xl text-white">
+	<div class="relative z-10 container mx-auto px-4 text-center" use:fadeIn>
+		<!-- Decorative gold line -->
+		<div
+			class="mx-auto mb-6 h-px w-16"
+			style="background: linear-gradient(90deg, transparent, var(--color-gold), transparent);"
+		></div>
+		<h1 class="mb-6 font-serif text-4xl font-bold tracking-tight text-white md:text-5xl">
+			Referral Programme
+		</h1>
+		<p class="mx-auto max-w-3xl text-xl text-white/90">
 			Share the love and save together! Refer a friend and you both get £5 off.
 		</p>
 	</div>
 </section>
 
 <!-- How It Works Section -->
-<section class="bg-white py-16">
+<section class="bg-[var(--color-cream)] py-20 md:py-24">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-4xl">
-			<h2
-				class="mb-12 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
-			>
-				How It Works
-			</h2>
+			<div use:fadeIn>
+				<h2
+					class="heading-accent mb-12 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+				>
+					How It Works
+				</h2>
+			</div>
 
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				<!-- Step 1 -->
-				<div class="text-center">
+				<div class="text-center" use:fadeIn={{ delay: 0 }}>
 					<div
-						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-gold)]"
+						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-gold)] shadow-md"
 					>
 						<span class="text-2xl font-bold text-[var(--color-navy)]">1</span>
 					</div>
@@ -49,9 +62,9 @@
 				</div>
 
 				<!-- Step 2 -->
-				<div class="text-center">
+				<div class="text-center" use:fadeIn={{ delay: 100 }}>
 					<div
-						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-gold)]"
+						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-gold)] shadow-md"
 					>
 						<span class="text-2xl font-bold text-[var(--color-navy)]">2</span>
 					</div>
@@ -65,9 +78,9 @@
 				</div>
 
 				<!-- Step 3 -->
-				<div class="text-center">
+				<div class="text-center" use:fadeIn={{ delay: 200 }}>
 					<div
-						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-gold)]"
+						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-gold)] shadow-md"
 					>
 						<span class="text-2xl font-bold text-[var(--color-navy)]">3</span>
 					</div>
@@ -84,12 +97,15 @@
 </section>
 
 <!-- Benefits Section -->
-<section class="bg-[var(--color-neutral-50)] py-16">
+<section class="bg-white py-20 md:py-24">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-4xl">
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 				<!-- For Existing Customers -->
-				<div class="rounded-lg bg-white p-8 shadow-md">
+				<div
+					class="rounded-xl border-t-2 border-[var(--color-gold)] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]"
+					use:fadeIn
+				>
 					<div class="mb-4 flex items-center gap-3">
 						<svg
 							class="h-8 w-8 text-[var(--color-gold)]"
@@ -109,7 +125,7 @@
 							For Existing Customers
 						</h3>
 					</div>
-					<div class="mb-6 rounded-lg bg-[var(--color-gold)] p-6 text-center">
+					<div class="mb-6 rounded-xl bg-[var(--color-gold)] p-6 text-center">
 						<p class="text-3xl font-bold text-[var(--color-navy)]">£5 OFF</p>
 						<p class="text-sm text-[var(--color-navy)]">Your Next Appointment</p>
 					</div>
@@ -158,14 +174,17 @@
 								/>
 							</svg>
 							<span class="text-gray-700"
-								>No limit on referrals - refer as many friends as you like!</span
+								>No limit on referrals — refer as many friends as you like!</span
 							>
 						</li>
 					</ul>
 				</div>
 
 				<!-- For New Customers -->
-				<div class="rounded-lg bg-white p-8 shadow-md">
+				<div
+					class="rounded-xl border-t-2 border-[var(--color-gold)] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]"
+					use:fadeIn={{ delay: 100 }}
+				>
 					<div class="mb-4 flex items-center gap-3">
 						<svg
 							class="h-8 w-8 text-[var(--color-gold)]"
@@ -185,7 +204,7 @@
 							For New Customers
 						</h3>
 					</div>
-					<div class="mb-6 rounded-lg bg-[var(--color-gold)] p-6 text-center">
+					<div class="mb-6 rounded-xl bg-[var(--color-gold)] p-6 text-center">
 						<p class="text-3xl font-bold text-[var(--color-navy)]">£5 OFF</p>
 						<p class="text-sm text-[var(--color-navy)]">Your First Appointment</p>
 					</div>
@@ -243,21 +262,26 @@
 </section>
 
 <!-- How to Redeem Section -->
-<section class="bg-white py-16">
+<section class="bg-[var(--color-cream)] py-20 md:py-24">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-3xl">
-			<h2
-				class="mb-8 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
-			>
-				How to Redeem Your Discount
-			</h2>
+			<div use:fadeIn>
+				<h2
+					class="heading-accent mb-10 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+				>
+					How to Redeem Your Discount
+				</h2>
+			</div>
 
-			<div class="rounded-lg bg-[var(--color-neutral-50)] p-8">
+			<div
+				class="rounded-xl bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+				use:fadeIn={{ delay: 100 }}
+			>
 				<div class="space-y-6">
 					<div class="flex items-start gap-4">
 						<div class="flex-shrink-0">
 							<div
-								class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)]"
+								class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)] shadow-sm"
 							>
 								<svg
 									class="h-6 w-6 text-[var(--color-navy)]"
@@ -291,7 +315,7 @@
 					<div class="flex items-start gap-4">
 						<div class="flex-shrink-0">
 							<div
-								class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)]"
+								class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)] shadow-sm"
 							>
 								<svg
 									class="h-6 w-6 text-[var(--color-navy)]"
@@ -326,7 +350,7 @@
 					<div class="flex items-start gap-4">
 						<div class="flex-shrink-0">
 							<div
-								class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)]"
+								class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)] shadow-sm"
 							>
 								<svg
 									class="h-6 w-6 text-[var(--color-navy)]"
@@ -361,16 +385,21 @@
 </section>
 
 <!-- Terms & Conditions -->
-<section class="bg-[var(--color-neutral-50)] py-16">
+<section class="bg-white py-20 md:py-24">
 	<div class="container mx-auto px-4">
 		<div class="mx-auto max-w-3xl">
-			<h2
-				class="mb-8 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
-			>
-				Terms & Conditions
-			</h2>
+			<div use:fadeIn>
+				<h2
+					class="heading-accent mb-10 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+				>
+					Terms & Conditions
+				</h2>
+			</div>
 
-			<div class="rounded-lg bg-white p-8 shadow-md">
+			<div
+				class="rounded-xl bg-[var(--color-cream)] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+				use:fadeIn={{ delay: 100 }}
+			>
 				<ul class="space-y-3 text-gray-700" role="list">
 					<li class="flex items-start gap-2">
 						<svg
@@ -507,9 +536,9 @@
 
 <!-- Call to Action -->
 <section
-	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-16 text-white"
+	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-20 text-white md:py-24"
 >
-	<div class="container mx-auto px-4 text-center">
+	<div class="container mx-auto px-4 text-center" use:fadeIn>
 		<h2 class="mb-6 font-serif text-3xl font-bold md:text-4xl">Start Referring Today!</h2>
 		<p class="mx-auto mb-8 max-w-2xl text-xl">
 			Share the Studio210 experience with your friends and family, and enjoy £5 off together.
@@ -517,13 +546,13 @@
 		<div class="flex flex-col justify-center gap-4 sm:flex-row">
 			<a
 				href="/booking"
-				class="inline-block rounded-lg bg-[var(--color-gold)] px-8 py-3 text-lg font-semibold text-[var(--color-navy)] transition-colors hover:bg-[var(--color-gold-light)]"
+				class="inline-block rounded-full bg-[var(--color-gold)] px-8 py-3 text-lg font-semibold text-[var(--color-navy)] shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-gold-light)] hover:shadow-xl active:scale-[0.98]"
 			>
 				Book Appointment
 			</a>
 			<a
 				href="/contact"
-				class="inline-block rounded-lg bg-white px-8 py-3 text-lg font-semibold text-[var(--color-navy)] transition-colors hover:bg-gray-100"
+				class="inline-block rounded-full bg-white px-8 py-3 text-lg font-semibold text-[var(--color-navy)] shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-xl active:scale-[0.98]"
 			>
 				Contact Us
 			</a>

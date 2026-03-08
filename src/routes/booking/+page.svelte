@@ -4,6 +4,7 @@
 	import SEOHead from '$lib/components/SEOHead.svelte';
 	import BookingForm from '$lib/components/BookingForm.svelte';
 	import OpeningHours from '$lib/components/OpeningHours.svelte';
+	import { fadeIn } from '$lib/actions/fadeIn';
 
 	let { data, form }: { data: PageData; form: ActionData } = $props();
 </script>
@@ -12,42 +13,52 @@
 
 <!-- Page Header -->
 <section
-	class="relative bg-cover bg-center py-16"
+	class="relative bg-cover bg-center py-24 md:py-32"
 	style="background-image: url('/photos/diary.jpg');"
 >
-	<!-- Light overlay for text readability on white background -->
-	<div class="absolute inset-0 bg-white/60"></div>
+	<!-- Gradient overlay -->
+	<div
+		class="absolute inset-0"
+		style="background: linear-gradient(to top, rgba(17,39,99,0.8) 0%, rgba(17,39,99,0.5) 50%, rgba(17,39,99,0.3) 100%);"
+	></div>
 
-	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 font-serif text-4xl font-bold text-[var(--color-navy)] md:text-5xl">
+	<div class="relative z-10 container mx-auto px-4 text-center" use:fadeIn>
+		<!-- Decorative gold line -->
+		<div
+			class="mx-auto mb-6 h-px w-16"
+			style="background: linear-gradient(90deg, transparent, var(--color-gold), transparent);"
+		></div>
+		<h1 class="mb-6 font-serif text-4xl font-bold tracking-tight text-white md:text-5xl">
 			Book Your Appointment
 		</h1>
-		<p class="mx-auto max-w-3xl text-xl text-[var(--color-navy)]">
+		<p class="mx-auto max-w-3xl text-xl text-white/90">
 			Choose your service and preferred time. We'll confirm your booking shortly.
 		</p>
 	</div>
 </section>
 
 <!-- Booking Content -->
-<section class="bg-white py-16">
+<section class="bg-[var(--color-cream)] py-20 md:py-24">
 	<div class="container mx-auto px-4">
 		<div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
 			<!-- Booking Form -->
-			<div class="lg:col-span-2">
-				<h2 class="mb-6 font-serif text-3xl font-bold text-[var(--color-navy)]">
+			<div class="lg:col-span-2" use:fadeIn>
+				<h2
+					class="heading-accent heading-accent-left mb-8 font-serif text-3xl font-bold text-[var(--color-navy)]"
+				>
 					Appointment Details
 				</h2>
 				<BookingForm {form} services={data.services} />
 			</div>
 
 			<!-- Booking Information -->
-			<div class="space-y-8">
-				<div class="rounded-lg bg-[var(--color-neutral-50)] p-6">
+			<div class="space-y-6" use:fadeIn={{ delay: 100 }}>
+				<div class="rounded-xl bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
 					<h3 class="mb-4 font-serif text-2xl font-bold text-[var(--color-navy)]">Opening Hours</h3>
 					<OpeningHours />
 				</div>
 
-				<div class="rounded-lg bg-[var(--color-neutral-50)] p-6">
+				<div class="rounded-xl bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
 					<h3 class="mb-4 font-serif text-2xl font-bold text-[var(--color-navy)]">
 						What to Expect
 					</h3>
@@ -100,12 +111,12 @@
 					</ul>
 				</div>
 
-				<div class="rounded-lg bg-[var(--color-navy)] p-6 text-white">
+				<div class="rounded-xl bg-[var(--color-navy)] p-6 text-white">
 					<h3 class="mb-2 font-serif text-xl font-bold">Need Help?</h3>
 					<p class="mb-4">Prefer to book by phone?</p>
 					<a
 						href="tel:07395292575"
-						class="inline-block w-full rounded-lg bg-[var(--color-gold)] px-6 py-3 text-center font-semibold text-[var(--color-navy)] transition-colors hover:bg-[var(--color-gold-light)]"
+						class="inline-block w-full rounded-full bg-[var(--color-gold)] px-6 py-3 text-center font-semibold text-[var(--color-navy)] shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-gold-light)] hover:shadow-lg active:scale-[0.98]"
 					>
 						Call Us
 					</a>

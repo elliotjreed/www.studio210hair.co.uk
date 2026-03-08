@@ -68,13 +68,16 @@
 
 <form bind:this={formElement} method="POST" use:enhance class="space-y-6" onsubmit={handleSubmit}>
 	{#if submitStatus?.type === 'success' || form?.success}
-		<div class="rounded border border-green-200 bg-green-50 px-4 py-3 text-green-800" role="status">
+		<div
+			class="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-800"
+			role="status"
+		>
 			{submitStatus?.message || "Thank you for your message! We'll be in touch soon."}
 		</div>
 	{/if}
 
 	{#if submitStatus?.type === 'error' || form?.error}
-		<div class="rounded border border-red-200 bg-red-50 px-4 py-3 text-red-800" role="alert">
+		<div class="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-800" role="alert">
 			{submitStatus?.message || form?.error}
 		</div>
 	{/if}
@@ -90,7 +93,7 @@
 			value={form?.name || ''}
 			required
 			aria-required="true"
-			class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-[var(--color-gold)]"
+			class="w-full rounded-xl border border-gray-200 px-4 py-3 shadow-[inset_0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-200 focus:border-transparent focus:shadow-[inset_0_1px_3px_rgba(0,0,0,0.06),0_0_0_3px_rgba(251,191,36,0.15)] focus:ring-2 focus:ring-[var(--color-gold)]/50"
 		/>
 	</div>
 
@@ -105,7 +108,7 @@
 			value={form?.email || ''}
 			required
 			aria-required="true"
-			class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-[var(--color-gold)]"
+			class="w-full rounded-xl border border-gray-200 px-4 py-3 shadow-[inset_0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-200 focus:border-transparent focus:shadow-[inset_0_1px_3px_rgba(0,0,0,0.06),0_0_0_3px_rgba(251,191,36,0.15)] focus:ring-2 focus:ring-[var(--color-gold)]/50"
 		/>
 	</div>
 
@@ -116,7 +119,7 @@
 			id="phone"
 			name="phone"
 			value={form?.phone || ''}
-			class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-[var(--color-gold)]"
+			class="w-full rounded-xl border border-gray-200 px-4 py-3 shadow-[inset_0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-200 focus:border-transparent focus:shadow-[inset_0_1px_3px_rgba(0,0,0,0.06),0_0_0_3px_rgba(251,191,36,0.15)] focus:ring-2 focus:ring-[var(--color-gold)]/50"
 		/>
 	</div>
 
@@ -130,7 +133,7 @@
 			rows="5"
 			required
 			aria-required="true"
-			class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-[var(--color-gold)]"
+			class="w-full rounded-xl border border-gray-200 px-4 py-3 shadow-[inset_0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-200 focus:border-transparent focus:shadow-[inset_0_1px_3px_rgba(0,0,0,0.06),0_0_0_3px_rgba(251,191,36,0.15)] focus:ring-2 focus:ring-[var(--color-gold)]/50"
 			>{form?.message || ''}</textarea
 		>
 	</div>
@@ -138,7 +141,7 @@
 	<button
 		type="submit"
 		disabled={isSubmitting}
-		class="w-full rounded-lg bg-[var(--color-gold)] px-6 py-3 font-semibold text-[var(--color-navy)] transition-colors hover:bg-[var(--color-gold-dark)] disabled:cursor-not-allowed disabled:opacity-50"
+		class="w-full rounded-full bg-[var(--color-gold)] px-6 py-3 font-semibold text-[var(--color-navy)] shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-gold-dark)] hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
 	>
 		{isSubmitting ? 'Sending...' : 'Send Message'}
 	</button>

@@ -13,6 +13,11 @@
 	--color-gold-light: #fcd34d;
 	--color-gold-dark: #f59e0b;
 
+	/* Refined palette */
+	--color-cream: #faf8f5;
+	--color-rose: #e8d5d0;
+	--color-charcoal: #2d2d2d;
+
 	/* Extended palette for variations */
 	--color-neutral-50: #f9fafb;
 	--color-neutral-100: #f3f4f6;
@@ -26,12 +31,28 @@
 	/* Spacing for consistent design */
 	--spacing-section: 4rem;
 	--spacing-component: 2rem;
+
+	/* Shadows */
+	--shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.05);
+	--shadow-elevated: 0 4px 20px rgba(0, 0, 0, 0.08);
+	--shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
+	--shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Base styles */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: var(--font-sans);
-	color: var(--color-neutral-900);
+	color: var(--color-charcoal);
+	background-color: var(--color-cream);
+}
+
+::selection {
+	background-color: var(--color-gold);
+	color: var(--color-navy);
 }
 
 /* Accessibility: Focus styles */
@@ -54,4 +75,88 @@ body {
 
 .skip-link:focus {
 	top: 0;
+}
+
+/* Section heading accent — gold underline via after pseudo-element */
+.heading-accent {
+	position: relative;
+}
+
+/* Decorative section divider with centre ornament */
+.section-divider {
+	position: relative;
+	text-align: center;
+}
+
+.section-divider::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+	transform: translateY(-50%);
+}
+
+.section-divider::after {
+	content: '◆';
+	position: relative;
+	display: inline-block;
+	background: var(--color-cream);
+	color: var(--color-gold);
+	font-size: 0.5rem;
+	padding: 0 0.75rem;
+	z-index: 1;
+}
+
+.section-divider-white::after {
+	background: white;
+}
+
+/* Scroll fade-in animation */
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-in-ready {
+	opacity: 0;
+	transform: translateY(1rem);
+	transition:
+		opacity 0.6s ease,
+		transform 0.6s ease;
+}
+
+.fade-in-ready.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Nav link underline slide animation */
+.nav-link {
+	position: relative;
+	padding-bottom: 2px;
+}
+
+.nav-link::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--color-gold);
+	transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current='page']::after {
+	width: 100%;
 }

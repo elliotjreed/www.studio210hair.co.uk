@@ -36,15 +36,23 @@
 	});
 </script>
 
-<div class="relative overflow-hidden rounded-lg bg-white shadow-lg">
+<div
+	class="relative overflow-hidden rounded-xl bg-[var(--color-cream)] shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+>
 	<!-- Reviews Container -->
 	<div
 		class="transition-transform duration-500 ease-in-out"
 		style="transform: translateX(-{currentIndex * 100}%); display: flex;"
 	>
 		{#each reviews as review}
-			<div class="min-w-full p-8 md:p-12" style="flex: 0 0 100%;">
-				<article class="mx-auto max-w-3xl text-center">
+			<div class="min-w-full px-8 py-12 md:px-16 md:py-16" style="flex: 0 0 100%;">
+				<article class="relative mx-auto max-w-3xl text-center">
+					<!-- Decorative oversized quote mark -->
+					<span
+						class="absolute -top-4 left-1/2 -translate-x-1/2 font-serif text-8xl leading-none text-[var(--color-gold)]/20 select-none"
+						aria-hidden="true">&ldquo;</span
+					>
+
 					<!-- Star Rating -->
 					<div class="mb-6 flex justify-center gap-1" aria-label="5 star rating">
 						<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
@@ -54,6 +62,7 @@
 								fill="currentColor"
 								viewBox="0 0 20 20"
 								aria-hidden="true"
+								style="filter: drop-shadow(0 1px 3px rgba(251, 191, 36, 0.4));"
 							>
 								<path
 									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
@@ -63,8 +72,8 @@
 					</div>
 
 					<!-- Review Text -->
-					<blockquote class="mb-6 text-xl text-gray-700 md:text-2xl">
-						"{review.reviewText}"
+					<blockquote class="relative mb-6 text-xl text-gray-700 md:text-2xl">
+						&ldquo;{review.reviewText}&rdquo;
 					</blockquote>
 
 					<!-- Reviewer Name -->
@@ -81,7 +90,7 @@
 	<!-- Navigation Arrows -->
 	<button
 		onclick={prevReview}
-		class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md transition-colors hover:bg-white md:left-4"
+		class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition-all duration-200 hover:bg-white hover:shadow-lg md:left-4"
 		aria-label="Previous review"
 	>
 		<svg
@@ -96,7 +105,7 @@
 
 	<button
 		onclick={nextReview}
-		class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md transition-colors hover:bg-white md:right-4"
+		class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition-all duration-200 hover:bg-white hover:shadow-lg md:right-4"
 		aria-label="Next review"
 	>
 		<svg

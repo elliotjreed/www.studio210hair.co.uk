@@ -1,24 +1,38 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { businessInfo } from '$lib/data/business';
 	import Navigation from './Navigation.svelte';
 
 	let mobileMenuOpen = $state(false);
+	let scrolled = $state(false);
+
+	onMount(() => {
+		const handleScroll = () => {
+			scrolled = window.scrollY > 50;
+		};
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
 </script>
 
-<header class="sticky top-0 z-50 bg-[var(--color-navy)] text-white shadow-md">
+<header
+	class="fixed top-0 z-50 w-full text-white transition-all duration-300 {scrolled || mobileMenuOpen
+		? 'border-b-2 border-[var(--color-gold)]/40 bg-[var(--color-navy)]/95 shadow-md backdrop-blur-md'
+		: 'border-b border-transparent bg-transparent'}"
+>
 	<div class="container mx-auto px-4">
 		<div class="flex h-20 items-center justify-between">
 			<!-- Logo -->
 			<a
 				href="/"
-				class="flex items-center gap-3 font-serif text-2xl font-bold text-[var(--color-gold)] transition-opacity hover:opacity-90 md:text-3xl"
+				class="flex items-center gap-3 font-serif text-2xl font-bold tracking-wide text-[var(--color-gold)] transition-opacity hover:opacity-90 md:text-3xl"
 			>
 				<img src="/favicon.svg" alt="Studio210 Logo" class="h-10 w-10 md:h-12 md:w-12" />
 				<span>Studio210</span>
 			</a>
 
 			<!-- Desktop Navigation -->
-			<nav class="hidden md:block" aria-label="Main navigation">
+			<nav class="hidden lg:block" aria-label="Main navigation">
 				<Navigation />
 			</nav>
 
@@ -47,7 +61,7 @@
 
 			<!-- Mobile menu button -->
 			<button
-				class="rounded p-2 transition-colors hover:bg-[var(--color-navy-dark)] md:hidden"
+				class="rounded p-2 transition-colors hover:bg-white/10 lg:hidden"
 				aria-label="Toggle navigation menu"
 				aria-expanded={mobileMenuOpen}
 				onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
@@ -85,14 +99,22 @@
 				{/if}
 			</button>
 		</div>
-
-		<!-- Mobile Navigation -->
-		{#if mobileMenuOpen}
-			<div class="pb-4 md:hidden">
-				<nav aria-label="Mobile navigation">
-					<Navigation mobile={true} />
-				</nav>
-			</div>
-		{/if}
 	</div>
 </header>
+
+<!-- Full-screen mobile overlay -->
+<div
+	class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-[var(--color-navy)]/95 pt-20 backdrop-blur-md transition-all duration-300 lg:hidden {mobileMenuOpen
+		? 'pointer-events-auto opacity-100'
+		: 'pointer-events-none opacity-0'}"
+	aria-hidden={!mobileMenuOpen}
+>
+	<!-- Decorative gold line -->
+	<div class="mb-10 h-px w-16 bg-[var(--color-gold)]/50"></div>
+
+	<nav aria-label="Mobile navigation">
+		<Navigation mobile={true} onLinkClick={() => (mobileMenuOpen = false)} />
+	</nav>
+
+	<div class="mt-10 h-px w-16 bg-[var(--color-gold)]/50"></div>
+</div>

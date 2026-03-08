@@ -3,6 +3,7 @@
 	import SEOHead from '$lib/components/SEOHead.svelte';
 	import ServiceCard from '$lib/components/ServiceCard.svelte';
 	import PhotoCarousel from '$lib/components/PhotoCarousel.svelte';
+	import { fadeIn } from '$lib/actions/fadeIn';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -11,18 +12,26 @@
 
 <!-- Page Header -->
 <section
-	class="relative bg-cover bg-center py-16"
+	class="relative bg-cover bg-center py-24 md:py-32"
 	style="background-image: url('/photos/equipment.jpg');"
 >
-	<!-- Light overlay for text readability on white background -->
-	<div class="absolute inset-0 bg-white/60"></div>
+	<!-- Gradient overlay -->
+	<div
+		class="absolute inset-0"
+		style="background: linear-gradient(to top, rgba(17,39,99,0.8) 0%, rgba(17,39,99,0.5) 50%, rgba(17,39,99,0.3) 100%);"
+	></div>
 
-	<div class="relative z-10 container mx-auto px-4 text-center">
-		<h1 class="mb-6 font-serif text-4xl font-bold text-[var(--color-navy)] md:text-5xl">
+	<div class="relative z-10 container mx-auto px-4 text-center" use:fadeIn>
+		<!-- Decorative gold line -->
+		<div
+			class="mx-auto mb-6 h-px w-16"
+			style="background: linear-gradient(90deg, transparent, var(--color-gold), transparent);"
+		></div>
+		<h1 class="mb-6 font-serif text-4xl font-bold tracking-tight text-white md:text-5xl">
 			Our Services
 		</h1>
-		<p class="mx-auto max-w-3xl text-xl text-[var(--color-navy)]">
-			From classic cuts to creative color, we offer a comprehensive range of professional hair
+		<p class="mx-auto max-w-3xl text-xl text-white/90">
+			From classic cuts to creative colour, we offer a comprehensive range of professional hair
 			services tailored to your unique style.
 		</p>
 	</div>
@@ -30,14 +39,20 @@
 
 <!-- Services by Category -->
 {#each data.services as category, index}
-	<section class={`py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-[var(--color-neutral-50)]'}`}>
+	<section class={`py-20 md:py-24 ${index % 2 === 0 ? 'bg-[var(--color-cream)]' : 'bg-white'}`}>
 		<div class="container mx-auto px-4">
-			<h2 class="mb-8 font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
-				{category.category}
-			</h2>
+			<div use:fadeIn>
+				<h2
+					class="heading-accent heading-accent-left mb-10 font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+				>
+					{category.category}
+				</h2>
+			</div>
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-				{#each category.items as service}
-					<ServiceCard {service} />
+				{#each category.items as service, serviceIndex}
+					<div use:fadeIn={{ delay: serviceIndex * 80 }}>
+						<ServiceCard {service} />
+					</div>
 				{/each}
 			</div>
 		</div>
@@ -45,12 +60,16 @@
 {/each}
 
 <!-- Client Work Carousel -->
-<section class="bg-white py-12">
+<section class="bg-[var(--color-cream)] py-20 md:py-24">
 	<div class="container mx-auto px-4">
-		<h2 class="mb-8 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl">
-			See Our Work
-		</h2>
-		<div class="mx-auto max-w-5xl">
+		<div use:fadeIn>
+			<h2
+				class="heading-accent mb-10 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+			>
+				See Our Work
+			</h2>
+		</div>
+		<div class="mx-auto max-w-5xl" use:fadeIn={{ delay: 100 }}>
 			<PhotoCarousel photos={data.galleryPhotos} />
 		</div>
 	</div>
@@ -58,16 +77,16 @@
 
 <!-- Call to Action -->
 <section
-	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-16 text-white"
+	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-20 text-white md:py-24"
 >
-	<div class="container mx-auto px-4 text-center">
+	<div class="container mx-auto px-4 text-center" use:fadeIn>
 		<h2 class="mb-6 font-serif text-3xl font-bold md:text-4xl">Ready to Book?</h2>
 		<p class="mx-auto mb-8 max-w-2xl text-xl">
 			Choose your perfect service and book your appointment online today.
 		</p>
 		<a
 			href="/booking"
-			class="inline-block rounded-lg bg-[var(--color-gold)] px-8 py-3 text-lg font-semibold text-[var(--color-navy)] transition-colors hover:bg-[var(--color-gold-light)]"
+			class="inline-block rounded-full bg-[var(--color-gold)] px-8 py-3 text-lg font-semibold text-[var(--color-navy)] shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-gold-light)] hover:shadow-xl active:scale-[0.98]"
 		>
 			Book Appointment
 		</a>

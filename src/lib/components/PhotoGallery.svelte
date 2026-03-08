@@ -22,28 +22,32 @@
 			closeLightbox();
 		}
 	}
+
+	// Assign varied row spans for masonry effect
+	const rowSpans = [2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3];
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
 
-<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-	{#each photos as photo}
+<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4" style="grid-auto-rows: 120px;">
+	{#each photos as photo, index}
 		<button
 			onclick={() => openLightbox(photo)}
-			class="group relative aspect-square overflow-hidden rounded-lg bg-gray-200 transition-transform hover:scale-105"
+			class="group relative overflow-hidden rounded-xl bg-gray-200 transition-all duration-300 hover:ring-2 hover:ring-[var(--color-gold)]/40 hover:ring-offset-1"
+			style="grid-row: span {rowSpans[index % rowSpans.length]};"
 			type="button"
 		>
 			<img
 				src={photo.src}
 				alt={photo.alt}
-				class="h-full w-full object-cover transition-opacity group-hover:opacity-90"
+				class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 				loading="lazy"
 			/>
 			<div
-				class="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/20"
+				class="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/40"
 			>
 				<svg
-					class="h-8 w-8 text-white opacity-0 transition-opacity group-hover:opacity-100"
+					class="h-8 w-8 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 					fill="none"
 					stroke="currentColor"
 					viewBox="0 0 24 24"
@@ -92,7 +96,7 @@
 		<img
 			src={selectedPhoto.src}
 			alt={selectedPhoto.alt}
-			class="max-h-full max-w-full rounded-lg object-contain"
+			class="max-h-full max-w-full rounded-xl object-contain"
 			onclick={(e) => e.stopPropagation()}
 		/>
 	</div>
