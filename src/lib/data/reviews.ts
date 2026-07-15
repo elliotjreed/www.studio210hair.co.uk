@@ -148,20 +148,9 @@ export const reviews: Review[] = [
 		rating: 5
 	},
 	{
-		reviewerName: 'Helen',
-		reviewText:
-			'Was very pleased with my cut & blow from Natasha, who was friendly and thorough and added a few extra touches as I was going to a wedding. Thank you!',
-		rating: 5
-	},
-	{
 		reviewerName: 'Tiarnna',
 		reviewText:
 			'Really good stylist, welcoming and pays attention to detail. Gave me exactly what I asked for',
-		rating: 5
-	},
-	{
-		reviewerName: 'Stacey',
-		reviewText: 'Thank you to Natasha , made me feel comfortable and a good trim',
 		rating: 5
 	},
 	{
@@ -175,11 +164,6 @@ export const reviews: Review[] = [
 		rating: 5
 	},
 	{
-		reviewerName: 'Tracey',
-		reviewText: 'Tash was friendly skilled and enjoyed having my high lights done there',
-		rating: 5
-	},
-	{
 		reviewerName: 'Sarah',
 		reviewText:
 			'Friendly staff, had a nice cup of coffee and a chat with my hair cut. It was worth travelling further than bulwell for it.',
@@ -189,28 +173,6 @@ export const reviews: Review[] = [
 		reviewerName: 'Laura',
 		reviewText:
 			'Felt welcome from the moment I entered the salon. Staff really friendly. Really happy with haircut.',
-		rating: 5
-	},
-	{
-		reviewerName: 'Kerry',
-		reviewText: 'Tash was so lovey as ever and did a great job thank you',
-		rating: 5
-	},
-	{
-		reviewerName: 'Huma',
-		reviewText:
-			'Hair cut gave me a new look that complimented my face. Natasha was very professional and did a great job',
-		rating: 5
-	},
-	{
-		reviewerName: 'Kerry',
-		reviewText: 'Mia is a real star and so lovely I will be back soon.',
-		rating: 5
-	},
-	{
-		reviewerName: 'Kerry T',
-		reviewText:
-			'Lovely atmosphere both Bridget and Natasha were attentive kind. Natasha did my hair lovely (to say shes a novice at pixie cuts) highly recommend this salon and have booked for a facial Monday. Thank you ladies',
 		rating: 5
 	},
 	{
@@ -241,12 +203,6 @@ export const reviews: Review[] = [
 		rating: 5
 	},
 	{
-		reviewerName: 'Tiarnna',
-		reviewText:
-			'Laura did my hair, she was very chatty and friendly! She took great detail and care with my hair and when I asked for her opinion on what was best for my hair type and overall desired health she was honest and helpful. Overall really satisfied!!',
-		rating: 5
-	},
-	{
 		reviewerName: 'K. Williams',
 		reviewText: 'Lovely lady, great service and advice given. Will be back',
 		rating: 5
@@ -257,27 +213,9 @@ export const reviews: Review[] = [
 		rating: 5
 	},
 	{
-		reviewerName: 'Huma',
-		reviewText:
-			'Belinda was very professional and did a really good job, provided tips on after care as well.',
-		rating: 5
-	},
-	{
-		reviewerName: 'Huma Khan',
-		reviewText:
-			'Both Belinda and Brigid have been extremely professional and friendly. They are there to make your whole experience amazing and you feel truly appreciated and listened to.',
-		rating: 5
-	},
-	{
 		reviewerName: 'Nadia',
 		reviewText:
 			'Superb service as usual! Bridget did a fantastic job. Love the new salon! I was made to feel comfortable and at ease. Looks after my hair and explains the processes to ensure my hair is healthy. Hijaab friendly service, knows how to deal with Asian hair. Highly recommend. Warm friendly and professional service.',
-		rating: 5
-	},
-	{
-		reviewerName: 'Ayesha',
-		reviewText:
-			'Booked my daughter in for a haircut after not having great experiences elsewhere. We had Belinda as our advanced stylist & she was amazing, my five year old was wiggly and chatty but she was so lovely & patient with her and her hair looks stunning!',
 		rating: 5
 	},
 	{
@@ -290,12 +228,6 @@ export const reviews: Review[] = [
 		reviewerName: 'Olga',
 		reviewText:
 			"If you want to look like a supermodel, come to this salon, and your dreams will come true!! My hair looks absolutely amazing, I love it! The day I come here is my best day!! The ladies are fantastic and honestly it's the best place in the country, the world!",
-		rating: 5
-	},
-	{
-		reviewerName: 'Marg',
-		reviewText:
-			'Belinda did a great job, she took her time and listened to what I wanted and I had a great cut and blow dry',
 		rating: 5
 	},
 	{
