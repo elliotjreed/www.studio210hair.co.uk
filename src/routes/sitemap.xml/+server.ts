@@ -17,7 +17,7 @@ export const GET: RequestHandler = async () => {
 ${pages
 	.map(
 		(page) => `  <url>
-    <loc>https://studio210.co.uk${page.url}</loc>
+    <loc>https://www.studio210.co.uk${page.url}</loc>
     <priority>${page.priority}</priority>
     <changefreq>${page.changefreq}</changefreq>
   </url>`
