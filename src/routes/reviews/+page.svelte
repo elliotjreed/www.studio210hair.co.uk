@@ -12,7 +12,7 @@
 <!-- Page Header -->
 <section
 	class="relative bg-cover bg-center py-24 md:py-32"
-	style="background-image: url('/photos/hair-styling.jpg');"
+	style="background-image: url('/photos/hair-styling.jpg'); background-image: image-set(url('/photos/hair-styling.webp') type('image/webp'), url('/photos/hair-styling.jpg') type('image/jpeg'));"
 >
 	<!-- Gradient overlay -->
 	<div
@@ -88,7 +88,7 @@
 						>
 
 						<!-- Star Rating -->
-						<div class="mb-4 flex gap-1" aria-label="5 star rating">
+						<div class="mb-4 flex gap-1" aria-label="{review.rating} star rating">
 							<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
 							{#each { length: review.rating } as star}
 								<svg

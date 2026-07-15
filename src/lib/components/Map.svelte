@@ -6,9 +6,14 @@
 	let map: any;
 
 	onMount(() => {
-		// Dynamic import for client-side only
-		(async () => {
-			const L = await import('leaflet');
+		let cancelled = false;
+
+		const initialiseMap = async () => {
+			const [L] = await Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]);
+
+			if (cancelled) {
+				return;
+			}
 
 			// Initialize map
 			map = L.map(mapElement).setView([businessInfo.location.lat, businessInfo.location.lng], 15);
@@ -27,24 +32,32 @@
 					`<strong>${businessInfo.name}</strong><br>${businessInfo.address.street}<br>${businessInfo.address.city}, ${businessInfo.address.postcode}`
 				)
 				.openPopup();
-		})();
+		};
+
+		// Defer loading Leaflet's JS/CSS and initialising the map until it is about to scroll into view
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						observer.disconnect();
+						initialiseMap();
+					}
+				}
+			},
+			{ rootMargin: '200px' }
+		);
+
+		observer.observe(mapElement);
 
 		return () => {
+			cancelled = true;
+			observer.disconnect();
 			if (map) {
 				map.remove();
 			}
 		};
 	});
 </script>
-
-<svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-		crossorigin=""
-	/>
-</svelte:head>
 
 <div
 	bind:this={mapElement}

@@ -107,7 +107,7 @@
 	class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-[var(--color-navy)]/95 pt-20 backdrop-blur-md transition-all duration-300 lg:hidden {mobileMenuOpen
 		? 'pointer-events-auto opacity-100'
 		: 'pointer-events-none opacity-0'}"
-	aria-hidden={!mobileMenuOpen}
+	inert={!mobileMenuOpen}
 >
 	<!-- Decorative gold line -->
 	<div class="mb-10 h-px w-16 bg-[var(--color-gold)]/50"></div>

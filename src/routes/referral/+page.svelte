@@ -11,7 +11,7 @@
 <!-- Page Header -->
 <section
 	class="relative bg-cover bg-center py-24 md:py-32"
-	style="background-image: url('/photos/hair-styling.jpg');"
+	style="background-image: url('/photos/hair-styling.jpg'); background-image: image-set(url('/photos/hair-styling.webp') type('image/webp'), url('/photos/hair-styling.jpg') type('image/jpeg'));"
 >
 	<!-- Gradient overlay -->
 	<div

@@ -1,6 +1,6 @@
 <div
 	class="relative bg-cover bg-center py-32 text-white md:py-48"
-	style="background-image: url('/photos/hair-styling.jpg');"
+	style="background-image: url('/photos/hair-styling.jpg'); background-image: image-set(url('/photos/hair-styling.webp') type('image/webp'), url('/photos/hair-styling.jpg') type('image/jpeg'));"
 >
 	<!-- Cinematic gradient overlay: dark at bottom, lighter at top -->
 	<div
