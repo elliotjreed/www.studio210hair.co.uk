@@ -62,5 +62,6 @@
 <div
 	bind:this={mapElement}
 	class="h-96 w-full rounded-lg shadow-lg"
+	role="region"
 	aria-label="Map showing Studio210 location"
 ></div>

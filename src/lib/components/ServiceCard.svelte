@@ -16,7 +16,7 @@
 			{service.name}
 		</h3>
 		<span
-			class="shrink-0 rounded-full bg-[var(--color-gold)]/10 px-3 py-1 text-base font-bold text-[var(--color-gold-dark)]"
+			class="shrink-0 rounded-full bg-[var(--color-gold)]/10 px-3 py-1 text-base font-bold text-[var(--color-navy)]"
 		>
 			{typeof service.price === 'number' ? `£${service.price}` : service.price}
 		</span>

@@ -88,7 +88,7 @@
 						>
 
 						<!-- Star Rating -->
-						<div class="mb-4 flex gap-1" aria-label="{review.rating} star rating">
+						<div class="mb-4 flex gap-1" role="img" aria-label="{review.rating} star rating">
 							<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
 							{#each { length: review.rating } as star}
 								<svg
