@@ -75,6 +75,59 @@
 	</div>
 </section>
 
+<!-- Trusted Partners -->
+<section class="bg-white py-20 md:py-24">
+	<div class="container mx-auto px-4">
+		<div use:fadeIn>
+			<h2
+				class="heading-accent mb-10 text-center font-serif text-3xl font-bold text-[var(--color-navy)] md:text-4xl"
+			>
+				Trusted Partners
+			</h2>
+		</div>
+		<div class="mx-auto max-w-2xl" use:fadeIn={{ delay: 100 }}>
+			<div
+				class="rounded-xl border-t-2 border-[var(--color-gold)] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]"
+			>
+				<h3 class="mb-2 text-xl font-semibold text-[var(--color-navy)]">Moremi Aesthetics</h3>
+				<p class="mb-4 text-gray-700">
+					Aesthetic treatments and beauty services including dermal fillers, anti-wrinkle
+					treatments, teeth whitening, fat dissolving, vampire facials and mesotherapy - "Where
+					Beauty Meets Confidence".
+				</p>
+				<div class="mb-6 space-y-1 text-gray-700">
+					<p>
+						<a
+							href="tel:07951822809"
+							class="transition-colors hover:text-[var(--color-gold)]"
+							aria-label="Call Moremi Aesthetics"
+						>
+							07951 822809
+						</a>
+					</p>
+					<p>
+						<a
+							href="mailto:info@moremiaesthetics.com"
+							class="transition-colors hover:text-[var(--color-gold)]"
+							aria-label="Email Moremi Aesthetics"
+						>
+							info@moremiaesthetics.com
+						</a>
+					</p>
+				</div>
+				<a
+					href="https://moremiaesthetics.com/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-block rounded-full bg-[var(--color-gold)] px-6 py-2.5 text-center font-semibold text-[var(--color-navy)] shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-gold-dark)] hover:shadow-lg active:scale-[0.98]"
+				>
+					Visit Website
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Call to Action -->
 <section
 	class="bg-gradient-to-br from-[var(--color-navy)] to-[var(--color-navy-dark)] py-20 text-white md:py-24"
